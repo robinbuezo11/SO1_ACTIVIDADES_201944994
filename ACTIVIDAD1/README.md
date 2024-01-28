@@ -14,7 +14,7 @@ El kernel es el núcleo del sistema operativo y puede clasificarse en varios tip
 
     Combina características de los kernels monolíticos y microkernels para lograr un equilibrio entre rendimiento y modularidad. En este caso, el kernel grande se hace más compacto y modulable. Otras partes del kernel pueden cargarse dinámicamente. Como ejemplo tenemos a Windows NT/2000/XP.
 
-![Tipos de Kernel](img\kernel_types.png)
+![Tipos de Kernel](img/kernel_types.png)
 
 
 ## User vs Kernel Mode
@@ -26,7 +26,7 @@ El kernel es el núcleo del sistema operativo y puede clasificarse en varios tip
 - **Modo Kernel:**
     El kernel es el programa central en el que se basan todos los demás componentes del sistema operativo, se utiliza para acceder a los componentes de hardware y programar qué procesos deben ejecutarse en un sistema informático y cuándo, y también gestiona la interacción del software y el hardware de la aplicación. Por lo tanto, es el programa más privilegiado; a diferencia de otros programas, puede interactuar directamente con el hardware. Cuando los programas que se ejecutan en modo de usuario necesitan acceso al hardware, por ejemplo, una cámara web, primero debe pasar por el kernel mediante una llamada al sistema y, para llevar a cabo estas solicitudes, la CPU cambia del modo de usuario al modo de kernel en el momento de la ejecución. Después de completar finalmente la ejecución del proceso, la CPU vuelve nuevamente al modo de usuario .
 
-![Usuario y Modo Kernel](img\user_kernel_mode.png)
+![Usuario y Modo Kernel](img/user_kernel_mode.png)
 
 ### Diferencias entre el modo Usuario y el modo Kernel
 | Criterios | Modo Kernel | Modo Usuario |
@@ -56,7 +56,7 @@ En los sistemas operativos, las aplicaciones dependen de los eventos para poder 
 
     Además, el controlador de trampas es sincrónico. Cuando el sistema operativo detecta una trampa, detiene el proceso del usuario. Tan pronto como se completa la llamada al sistema, el sistema operativo reanuda y continúa la ejecución de los procesos del usuario:
 
-    ![Trap](img\trap.webp)
+    ![Trap](img/trap.webp)
 
     Además, una trampa puede verse como un controlador de interrupciones de la CPU. El sistema operativo guarda los punteros de la pila, registra la memoria y puede reanudar su ejecución anterior nuevamente.
 
@@ -78,7 +78,7 @@ En los sistemas operativos, las aplicaciones dependen de los eventos para poder 
 
     Una CPU contiene un pin de interrupción específico conocido como pin INT para la interrupción. El pin INT conecta dispositivos de hardware como teclados y tarjetas NIC con la CPU. Cuando presionamos una tecla del teclado, se genera una interrupción. Posteriormente, el sistema operativo cambia el contexto e invoca la rutina del controlador de interrupciones del teclado. Después de completar la ejecución, se vuelve al proceso anterior:
 
-    ![Interrupt](img\interrupt.webp)
+    ![Interrupt](img/interrupt.webp)
 
     En general, varios dispositivos de hardware comparten un único pin INT mediante un controlador de interrupciones. Para determinar qué dispositivo produjo la interrupción, el procesador contacta al controlador de interrupciones. Además, el procesador realiza el procedimiento de manejo de interrupciones relevante, como el teclado o la rutina del manejo de interrupciones USB, según la comunicación con el controlador de interrupciones.
 
