@@ -24,3 +24,7 @@ if [ ! -d "$ruta" ]; then
 fi
 
 echo "$salida" >> "/tmp/${fecha}/saludos.log"
+
+# Se crea el cronjob para ejecutar el script cada 5min (Se debe modificar el path según sea necesario)
+cronjob="*/5 * * * * /home/robin/Documentos/Universidad/2024/1Semestre/SO1/SO1_ACTIVIDADES_201944994/ACTIVIDAD2/script.sh"
+(crontab -l 2>/dev/null; echo "$cronjob") | crontab -
