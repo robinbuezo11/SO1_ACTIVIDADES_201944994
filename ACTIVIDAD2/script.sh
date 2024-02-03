@@ -1,10 +1,12 @@
 #!/bin/bash
 
-# Lee la variable GITHUB_USER
-read -p "Ingrese el nombre de usuario de GitHub: " GITHUB_USER
+# Se configura la variable de entorno para su posterior uso
+export GITHUB_USER=robinbuezo11
+
+# Se crea la url a consultar leyendo la variable de entorno
+url="https://api.github.com/users/${GITHUB_USER}"
 
 # Consulta la url y guarda la información en la variable data
-url="https://api.github.com/users/${GITHUB_USER}"
 data=$(curl -s "$url")
 
 # Obtener los datos del JSON y almacenarlos en variables
@@ -25,6 +27,17 @@ fi
 
 echo "$salida" >> "/tmp/${fecha}/saludos.log"
 
-# Se crea el cronjob para ejecutar el script cada 5min (Se debe modificar el path según sea necesario)
-cronjob="*/5 * * * * /home/robin/Documentos/Universidad/2024/1Semestre/SO1/SO1_ACTIVIDADES_201944994/ACTIVIDAD2/script.sh"
-(crontab -l 2>/dev/null; echo "$cronjob") | crontab -
+# Se configura la ruta completa del script (se debe modificar según las necesidades)
+script_path="/home/robin/Documentos/Universidad/2024/1Semestre/SO1/SO1_ACTIVIDADES_201944994/ACTIVIDAD2/script.sh"
+
+# Se define el cronjob
+cronjob="*/5 * * * * $script_path"
+
+# Se obtiene el contenido actual del crontab
+current_crontab=$(crontab -l 2>/dev/null)
+
+# Verifica si el script ya está en el crontab actual, si no lo agrega
+if [[ ! $current_crontab =~ $script_path ]]; then
+	new_crontab=$(echo -e "${current_crontab}\n${cronjob}")
+	echo "$new_crontab" | crontab -
+fi
