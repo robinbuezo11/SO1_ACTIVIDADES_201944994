@@ -87,13 +87,13 @@ Es esta actividad se creó un systemd unit de tipo servicio que inicia con el si
     El cual nos devolverá las salidas del script y los mensajes relacionados al servicio.
 
     ~~~
-    feb 22 23:28:02 Robin-Dell-G15 systemd[1]: Started Servicio de saludo.
-    feb 22 23:28:02 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:02 CST
-    feb 22 23:28:03 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:03 CST
-    feb 22 23:28:04 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:04 CST
-    feb 22 23:28:05 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:05 CST
-    feb 22 23:28:06 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:06 CST
-    feb 22 23:28:07 Robin-Dell-G15 saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:07 CST
+    feb 22 23:28:02 Equipo systemd[1]: Started Servicio de saludo.
+    feb 22 23:28:02 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:02 CST
+    feb 22 23:28:03 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:03 CST
+    feb 22 23:28:04 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:04 CST
+    feb 22 23:28:05 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:05 CST
+    feb 22 23:28:06 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:06 CST
+    feb 22 23:28:07 Equipo saludo.sh[52606]: Hola, hoy es jue 22 feb 2024 23:28:07 CST
     ...
     ~~~
 
@@ -108,5 +108,3 @@ Es esta actividad se creó un systemd unit de tipo servicio que inicia con el si
     Si queremos deshabilitar el servicio para que ya no inicie con el sistema podemos usar el siguiente comando.
 
     `sudo systemctl disable saludo.service`
-
-    El cual nos devolverá las salidas del script y los mensajes relacionados al servicio.
